@@ -1,0 +1,19 @@
+1. install next js
+
+2. install better auth
+
+3. create env file
+
+4. BETTER_AUTH_SECRET , BETTER_AUTH_URL set in env 
+
+5. create auth.js file 
+
+6. install mongoDB adapter
+
+7. install mongoDB
+
+8. auth.js setup ====  database: mongodbAdapter(db, {
+    client
+  }),
+
+9.  
