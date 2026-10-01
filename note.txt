@@ -16,4 +16,21 @@
     client
   }),
 
-9.  
+9. mongoDbUrl setup in env
+
+10. create /app/api/auth/[...all]/route.ts and setup ====>>> 
+import { auth } from "@/lib/auth"; // path to your auth file
+import { toNextJsHandler } from "better-auth/next-js";
+
+export const { POST, GET } = toNextJsHandler(auth);
+
+11. create auth-client.js file 
+
+
+================== besic setup done =============================
+
+12. email and pass authentication 
+
+13. create (auth) folder then create signup and signin page
+
+14. 
