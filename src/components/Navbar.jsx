@@ -9,17 +9,36 @@ export default function Navbar() {
 
 
   const { data: session } = useSession();
-  const navLink = (
+  const navLink = session?.user ? (
+    // Links for Logged-in Users (Admin/Dashboard)
     <>
       <li>
-        <Link href="#" className="block py-2">
+        <Link href="/dashboard" className="block py-2 font-medium">
+          Dashboard
+        </Link>
+      </li>
+      <li>
+        <Link href="/profile" className="block py-2">
+          Profile
+        </Link>
+      </li>
+    </>
+  ) : (
+    // Links for Guests / Non-logged-in Users
+    <>
+      <li>
+        <Link href="/" className="block py-2">
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link href="/features" className="block py-2">
           Features
         </Link>
       </li>
-
       <li>
-        <Link href="#" className="block py-2 font-medium text-accent">
-          Dashboard
+        <Link href="/pricing" className="block py-2">
+          Pricing
         </Link>
       </li>
     </>

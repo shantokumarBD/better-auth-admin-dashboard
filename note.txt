@@ -44,3 +44,11 @@ export const { POST, GET } = toNextJsHandler(auth);
 18. auth-client theke signOut export kora ebong Navbar er Logout button e onClick hisebe add kora, shathe Login/Sign Up link gulote sothik route (/sign-in, /sign-up) add kora
 
 19. sign-in page e password field e eye icon diye password hide/show korar jnno InputGroup ebong isVisible state add kora
+
+20. auth.js e Google ebong GitHub socialProviders config kora ebong sign-up page e signIn.social() er madhome Google o GitHub diye login/signup er button add kora
+
+21. Google ebong GitHub er login button gulo alada ekta reusable component (SocialAuth.jsx) e toiri kora ebong sign-in o sign-up page e seta import kore add kora
+
+22. sign-in o sign-up page er Form e proyojonhin 'Reset' button bad diye puro width jure "Sign In" o "Create Account" button add kora
+
+23. Navbar e session er upor vitti kore conditionally link dekhano (User logged in thakle Dashboard/Profile, na thakle Home/Features/Pricing)

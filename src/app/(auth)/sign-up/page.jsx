@@ -1,6 +1,7 @@
 "use client";
 
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
+import SocialAuth from "@/components/SocialAuth";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -26,12 +27,11 @@ export default function SignUpPage() {
     // console.log(data);
 
     const { data: resData, error } = await signUp.email({
-      name:  data.name,
+      name: data.name,
       email: data.email,
-      password: data.password, 
+      password: data.password,
     });
-    console.log(resData , error);
-    
+    console.log(resData, error);
   };
 
   return (
@@ -106,20 +106,17 @@ export default function SignUpPage() {
             <FieldError />
           </TextField>
 
-          <div className="mt-2 flex w-full gap-3">
+          <div className="mt-2 w-full">
             <Button
               color="primary"
               type="submit"
               className="w-full font-medium"
             >
-              <Check />
-              Submit
-            </Button>
-            <Button type="reset" variant="flat" className="w-full font-medium">
-              Reset
+              Create Account
             </Button>
           </div>
         </Form>
+        <SocialAuth />
       </div>
     </div>
   );
