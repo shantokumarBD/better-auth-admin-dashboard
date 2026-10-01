@@ -39,4 +39,4 @@ export const { POST, GET } = toNextJsHandler(auth);
 
 16. sign-in page er onsubmit e auth-client theke signIn.email call kora 
 
-17. 
+17. Navbar component toiri kora ebong useSession() bebohar kore user logged in thakle name/logout dekhano, na thakle login/signup link dekhano
