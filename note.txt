@@ -18,7 +18,7 @@
 
 9. mongoDbUrl setup in env
 
-10. create /app/api/auth/[...all]/route.ts and setup ====>>> 
+10. create /app/api/auth/[...all]/route.js and setup ====>>> 
 import { auth } from "@/lib/auth"; // path to your auth file
 import { toNextJsHandler } from "better-auth/next-js";
 
@@ -35,3 +35,8 @@ export const { POST, GET } = toNextJsHandler(auth);
 
 14. install heroui for form component
 
+15. sign-up page er onsubmit e auth-client theke signUp.email call kora
+
+16. sign-in page er onsubmit e auth-client theke signIn.email call kora 
+
+17. 
