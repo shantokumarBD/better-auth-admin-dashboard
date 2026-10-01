@@ -33,4 +33,5 @@ export const { POST, GET } = toNextJsHandler(auth);
 
 13. create (auth) folder then create signup and signin page
 
-14. 
+14. install heroui for form component
+
