@@ -40,3 +40,6 @@ export const { POST, GET } = toNextJsHandler(auth);
 16. sign-in page er onsubmit e auth-client theke signIn.email call kora 
 
 17. Navbar component toiri kora ebong useSession() bebohar kore user logged in thakle name/logout dekhano, na thakle login/signup link dekhano
+
+18. auth-client theke signOut export kora ebong Navbar er Logout button e onClick hisebe add kora, shathe Login/Sign Up link gulote sothik route (/sign-in, /sign-up) add kora
+
