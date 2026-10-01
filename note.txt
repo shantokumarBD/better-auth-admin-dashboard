@@ -52,3 +52,10 @@ export const { POST, GET } = toNextJsHandler(auth);
 22. sign-in o sign-up page er Form e proyojonhin 'Reset' button bad diye puro width jure "Sign In" o "Create Account" button add kora
 
 23. Navbar e session er upor vitti kore conditionally link dekhano (User logged in thakle Dashboard/Profile, na thakle Home/Features/Pricing)
+
+24. Navbar e Logout button er ReferenceError fix kora, useRouter() import kora o sothik route e (/sign-in) redirect kora
+
+25. Edge browser e password field er default double eye icon hide korar jnno globals.css e ::-ms-reveal CSS rule add kora
+
+26. Profile page toiri kora ebong dashboard o profile route ke secure korar jnno (middleware logic hisebe) proxy.js file create kora
+

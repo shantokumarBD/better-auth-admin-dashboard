@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+
+/* Hide browser default password reveal icon (like in Edge) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
