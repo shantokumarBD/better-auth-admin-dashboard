@@ -11,8 +11,13 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { Eye, EyeSlash } from "@gravity-ui/icons";
+import { InputGroup } from "@heroui/react";
+import { useState } from "react";
 
 export default function SignInPage() {
+  const [isVisible, setIsVisible] = useState(false);
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -31,7 +36,6 @@ export default function SignInPage() {
     });
 
     console.log(resData, error);
-    
   };
 
   return (
@@ -64,11 +68,12 @@ export default function SignInPage() {
             <FieldError />
           </TextField>
 
+
           <TextField
             isRequired
             minLength={8}
+            className="w-full"
             name="password"
-            type="password"
             validate={(value) => {
               if (value.length < 8) {
                 return "Password must be at least 8 characters";
@@ -84,7 +89,27 @@ export default function SignInPage() {
             }}
           >
             <Label>Password</Label>
-            <Input placeholder="Enter your password" />
+            <InputGroup>
+              <InputGroup.Input
+                type={isVisible ? "text" : "password"}
+                placeholder="Enter your password"
+              />
+              <InputGroup.Suffix className="pe-0">
+                <Button
+                  isIconOnly
+                  aria-label={isVisible ? "Hide password" : "Show password"}
+                  size="sm"
+                  variant="ghost"
+                  onPress={() => setIsVisible(!isVisible)}
+                >
+                  {isVisible ? (
+                    <Eye className="size-4" />
+                  ) : (
+                    <EyeSlash className="size-4" />
+                  )}
+                </Button>
+              </InputGroup.Suffix>
+            </InputGroup>
             <Description>
               Must be at least 8 characters with 1 uppercase and 1 number
             </Description>
@@ -92,7 +117,11 @@ export default function SignInPage() {
           </TextField>
 
           <div className="mt-2 flex w-full gap-3">
-            <Button color="primary" type="submit" className="w-full font-medium">
+            <Button
+              color="primary"
+              type="submit"
+              className="w-full font-medium"
+            >
               <Check />
               Submit
             </Button>

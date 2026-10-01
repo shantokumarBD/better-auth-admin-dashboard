@@ -43,3 +43,4 @@ export const { POST, GET } = toNextJsHandler(auth);
 
 18. auth-client theke signOut export kora ebong Navbar er Logout button e onClick hisebe add kora, shathe Login/Sign Up link gulote sothik route (/sign-in, /sign-up) add kora
 
+19. sign-in page e password field e eye icon diye password hide/show korar jnno InputGroup ebong isVisible state add kora
