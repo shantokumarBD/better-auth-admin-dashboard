@@ -62,3 +62,9 @@ export const { POST, GET } = toNextJsHandler(auth);
 27. better-auth er concepts er modde giye users and accounts er username update korlam onSubmit e 
 
 28. Navbar-e session load howar somoy UI flicker rodh korar jnno useSession theke isPending bebohar kore skeleton loader (animate-pulse) add kora
+
+29. Email Verification setup (Resend diye):
+    - auth.js e emailAndPassword er vitore `requireEmailVerification: true` kora.
+    - Resend package install kora ebong .env e RESEND_API_KEY add kora.
+    - auth.js e `emailVerification` block add kora, jekhane Resend er madhome user ke verification link (url) email kora hoy.
+    - Note: Resend er free testing domain (onboarding@resend.dev) sudhu account owner er email e mেইল pathate pare. Onno email e pathanor jnno nijer domain verify korte hoy.
