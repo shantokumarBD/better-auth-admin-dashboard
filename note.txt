@@ -59,3 +59,6 @@ export const { POST, GET } = toNextJsHandler(auth);
 
 26. Profile page toiri kora ebong dashboard o profile route ke secure korar jnno (middleware logic hisebe) proxy.js file create kora
 
+27. better-auth er concepts er modde giye users and accounts er username update korlam onSubmit e 
+
+28. Navbar-e session load howar somoy UI flicker rodh korar jnno useSession theke isPending bebohar kore skeleton loader (animate-pulse) add kora

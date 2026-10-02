@@ -8,8 +8,14 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
-  const { data: session } = useSession();
-  const navLink = session?.user ? (
+  const { data: session, isPending } = useSession();
+  const navLink = isPending ? (
+    <>
+      <li><div className="h-4 w-16 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800 my-3"></div></li>
+      <li><div className="h-4 w-16 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800 my-3"></div></li>
+      <li><div className="h-4 w-16 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800 my-3"></div></li>
+    </>
+  ) : session?.user ? (
     // Links for Logged-in Users (Admin/Dashboard)
     <>
       <li>
@@ -54,7 +60,12 @@ export default function Navbar() {
     });
   };
 
-  const navButton = (
+  const navButton = isPending ? (
+    <div className="flex gap-2 items-center">
+      <div className="h-8 w-16 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"></div>
+      <div className="h-10 w-24 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"></div>
+    </div>
+  ) : (
     <>
       {session?.user ? (
         <>
