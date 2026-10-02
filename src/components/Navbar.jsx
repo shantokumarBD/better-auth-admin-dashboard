@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, Button } from "@heroui/react";
 import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,7 +55,11 @@ export default function Navbar() {
     await signOut({
       fetchOptions: {
         onSuccess: () => {
+          toast.success("Logged out successfully!");
           router.push("/sign-in");
+        },
+        onError: (ctx) => {
+          toast.error(ctx.error.message);
         },
       },
     });

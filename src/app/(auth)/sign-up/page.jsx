@@ -12,8 +12,11 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -31,7 +34,13 @@ export default function SignUpPage() {
       email: data.email,
       password: data.password,
     });
-    console.log(resData, error);
+    
+    if (error) {
+      toast.error(error.message);
+    } else {
+      toast.success("Account created! Please check your email to verify.");
+      router.push("/sign-in");
+    }
   };
 
   return (

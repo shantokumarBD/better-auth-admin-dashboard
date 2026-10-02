@@ -68,3 +68,18 @@ export const { POST, GET } = toNextJsHandler(auth);
     - Resend package install kora ebong .env e RESEND_API_KEY add kora.
     - auth.js e `emailVerification` block add kora, jekhane Resend er madhome user ke verification link (url) email kora hoy.
     - Note: Resend er free testing domain (onboarding@resend.dev) sudhu account owner er email e mেইল pathate pare. Onno email e pathanor jnno nijer domain verify korte hoy.
+
+30. Profile Page er UI ke onnano auth page (sign-in, sign-up) er moto same centered card layoute design kora.
+
+31. Forgot Password Flow toiri kora:
+    - auth.js e emailAndPassword er vitore `sendResetPassword` callback e Resend diye reset link email korar logic add kora.
+    - auth-client.js theke `requestPasswordReset` export kora.
+    - `/forgot-password` route toiri kore email input form design kora ebong submit korle requestPasswordReset call kora.
+    - sign-in page e "Forgot Password?" link add kora.
+
+32. Reset Password Flow o Toast Notifications:
+    - auth-client.js theke `resetPassword` export kora.
+    - `/reset-password` route toiri kora. `page.jsx` e Suspense diye form ke wrap kora ebong `reset-password-form.jsx` e form logic lekha.
+    - useSearchParams theke URL er "token" collect kora ebong form theke new password collect kore `resetPassword` call kora.
+    - `react-hot-toast` bebohar kore password update er error ba success message (toast) dekhano ebong success hole `useRouter()` bebohar kore user ke /sign-in page e redirect kora.
+    - Code simple korar jnno form theke sora-sori `new FormData(e.currentTarget).get("password")` diye password fetch kora.

@@ -15,6 +15,8 @@ import {
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import { InputGroup } from "@heroui/react";
 import { useState } from "react";
+import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function SignInPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +38,11 @@ export default function SignInPage() {
       callbackURL: "/",
     });
 
-    console.log(resData, error);
+    if (error) {
+      toast.error(error.message);
+    } else {
+      toast.success("Signed in successfully!");
+    }
   };
 
   return (
@@ -116,7 +122,7 @@ export default function SignInPage() {
             </Description>
             <FieldError />
           </TextField>
-
+          <p>Forgot Password? <small><Link href={'/forgot-password'}>Click here</Link></small></p>
           <div className="mt-2 w-full">
             <Button
               color="primary"
